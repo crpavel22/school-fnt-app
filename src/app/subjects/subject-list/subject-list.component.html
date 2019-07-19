@@ -1,1 +1,25 @@
-<p>subject-list works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Subject</button>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      *ngFor="let subject of subjects"
+      class="list-group-item clearfix"
+      href="#"
+    >
+      <div class="pull-left">
+        <h4 class="list-group-item-header">{{subject.name}}</h4>
+        <p class="list-group-item-text">{{subject.description}}</p>
+      </div>
+    </a>
+    <app-subject-item></app-subject-item>
+
+  </div>
+</div>
+
