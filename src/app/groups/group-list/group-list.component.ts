@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Group} from '../../models/group.model';
 
 @Component({
@@ -7,6 +7,8 @@ import {Group} from '../../models/group.model';
   styleUrls: ['./group-list.component.css']
 })
 export class GroupListComponent implements OnInit {
+
+  @Output() groupWasSelected = new EventEmitter<Group>();
 
   groups: Group[] = [
     new Group('Mathematics 1', 'Mathematics course first'),
@@ -19,4 +21,7 @@ export class GroupListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelected(group: Group) {
+    this.groupWasSelected.emit(group);
+  }
 }

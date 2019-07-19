@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Subject} from '../../models/subject.model';
 
 @Component({
@@ -7,6 +7,8 @@ import {Subject} from '../../models/subject.model';
   styleUrls: ['./subject-list.component.css']
 })
 export class SubjectListComponent implements OnInit {
+
+  @Output() subjectWasSelected = new EventEmitter<Subject>();
 
   subjects: Subject[] = [
     new Subject('Mathematics I', 6, 'Practice Mathematics beginner'),
@@ -19,4 +21,7 @@ export class SubjectListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelectSubject(subject: Subject) {
+    this.subjectWasSelected.emit(subject);
+  }
 }

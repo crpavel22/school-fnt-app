@@ -8,18 +8,11 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <a
-      *ngFor="let subject of subjects"
-      class="list-group-item clearfix"
-      href="#"
-    >
-      <div class="pull-left">
-        <h4 class="list-group-item-header">{{subject.name}}</h4>
-        <p class="list-group-item-text">{{subject.description}}</p>
-      </div>
-    </a>
-    <app-subject-item></app-subject-item>
-
+    <app-subject-item
+      (subjectSelected)="onSelectSubject(subjectEl)"
+      *ngFor="let subjectEl of subjects"
+      [subject]="subjectEl"
+    ></app-subject-item>
   </div>
 </div>
 

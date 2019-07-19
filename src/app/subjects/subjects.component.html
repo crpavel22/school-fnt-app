@@ -1,8 +1,14 @@
 <div class="row">
   <div class="col-md-5">
-    <app-subject-list></app-subject-list>
+    <app-subject-list (subjectWasSelected)="selectedSubject = $event"></app-subject-list>
   </div>
   <div class="col-md-7">
-    <app-subject-detail></app-subject-detail>
+    <app-subject-detail
+      *ngIf="selectedSubject; else infoText"
+      [subject]="selectedSubject"></app-subject-detail>
+
+    <ng-template #infoText>
+      <p>Pleas select a subject!!</p>
+    </ng-template>
   </div>
 </div>

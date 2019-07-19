@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Subject} from '../models/subject.model';
 
 @Component({
   selector: 'app-subjects',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subjects.component.css']
 })
 export class SubjectsComponent implements OnInit {
+
+  selectedSubject: Subject;
 
   constructor() { }
 

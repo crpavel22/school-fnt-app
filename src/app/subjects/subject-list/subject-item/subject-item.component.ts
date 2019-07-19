@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Subject} from '../../../models/subject.model';
 
 @Component({
   selector: 'app-subject-item',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectItemComponent implements OnInit {
 
+  @Output() subjectSelected = new EventEmitter<void>();
+  @Input() subject: Subject;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelectSubject() {
+    this.subjectSelected.emit();
+  }
 }

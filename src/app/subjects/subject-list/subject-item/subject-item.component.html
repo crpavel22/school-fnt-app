@@ -1,1 +1,10 @@
-<p>subject-item works!</p>
+<a
+  (click)="onSelectSubject()"
+  class="list-group-item clearfix"
+  href="#"
+>
+  <div class="pull-left">
+    <h4 class="list-group-item-header">{{subject.name}}</h4>
+    <p class="list-group-item-text">{{subject.description}}</p>
+  </div>
+</a>

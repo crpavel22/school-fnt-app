@@ -6,18 +6,10 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <a
-      *ngFor="let group of groups"
-      class="list-group-item clearfix"
-      href="#"
-    >
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{group.name}}</h4>
-        <p class="list-group-item-text">{{group.description}}</p>
-      </div>
-    </a>
-
-    <app-group-item></app-group-item>
+    <app-group-item
+      (groupSelected)="onSelected(groupEl)" *ngFor="let groupEl of groups"
+      [group]="groupEl"
+    ></app-group-item>
   </div>
 
 </div>

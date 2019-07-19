@@ -1,1 +1,10 @@
-<p>group-item works!</p>
+<a
+  (click)="onSelectedGroup()"
+  class="list-group-item clearfix"
+  href="#"
+>
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{group.name}}</h4>
+    <p class="list-group-item-text">{{group.description}}</p>
+  </div>
+</a>
